@@ -44,6 +44,9 @@ editor  = 'vim'
 modkey  = 'Mod4'
 term    = 'urxvt'
 
+lower_volume = 'amixer -c 0 set Master 2dB-'
+raise_volume = 'amixer -c 0 set Master 2dB+'
+
 beautiful.init( confdir .. '/theme.lua' )
 
 layouts = {
@@ -161,6 +164,15 @@ end
 -- { KEY BINDINGS
 --
 globalkeys = awful.util.table.join(
+
+  -- Fn+F8
+  awful.key({ }, 'XF86AudioLowerVolume', function () 
+                                           awful.util.spawn( lower_volume )             end ),
+  -- Fn+F9
+  awful.key({ }, 'XF86AudioRaiseVolume', function () 
+                                           awful.util.spawn( raise_volume )             end ),
+
+
   awful.key({ modkey,           }, 'Escape', awful.tag.history.restore                      ),
   awful.key({ modkey,           }, 'Return', function () awful.util.spawn( term )       end ),
   awful.key({ modkey,           }, 'space', function () awful.layout.inc( layouts, 1 )  end ),
