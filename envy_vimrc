@@ -41,3 +41,4 @@ set shiftwidth=2
 
 nmap <silent> <C-n> :tabnext<CR>
 nmap <silent> <C-p> :tabprev<CR>
+nmap <silent> <C-y> :let @/=''<CR>
