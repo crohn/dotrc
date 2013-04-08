@@ -334,6 +334,18 @@ awful.rules.rules = {
 
 -- { SIGNALS 
 --
+client.add_signal( 'manage',
+  function (c, startup)
+
+    c:add_signal( 'mouse::enter',
+      function (c)
+        if awful.client.focus.filter( c ) then
+          client.focus = c
+        end
+      end )
+
+  end )
+
 client.add_signal( 'focus', 
   function (c) 
     c.border_color = beautiful.border_focus 
