@@ -1,0 +1,18 @@
+# Xft.dpi:
+Xft.antialias:    true
+Xft.hinting:      true
+Xft.hintstyle:    hintfull
+
+xterm*foreground: #eee
+xterm*background: #000
+xterm*scrollbar:  false
+xterm.*faceName:  xft:Terminus:pixelsize=14
+xterm*loginShell: true
+
+URxvt*foreground: #eee
+URxvt*background: #000
+URxvt*font:       xft:Dejavu Sans Mono:pixelsize=13
+URxvt*scrollBar:  false
+URxvt*loginShell: true
+#URxvt*cursorBlink: true
+#URxvt*cursorUnderline: true

@@ -1,0 +1,4 @@
+vim/
+awesome/rc.lua
+awesome/theme.lua
+.*swp
