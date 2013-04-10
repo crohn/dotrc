@@ -6,7 +6,8 @@ local wallbg   = os.getenv('HOME') .. '/img/wallpaper'
 theme = { }
 theme.wallpaper_cmd = { 'feh --bg-tile ' .. wallbg }
 
-theme.screenlock = os.getenv('HOME') .. '/img/lockpaper'
+local lockpaper = os.getenv('HOME') .. '/img/lockpaper'
+theme.screenlock_cmd = 'i3lock -t -i ' ..  lockpaper
 
 theme.font = 'Dejavu Sans Mono 8'
 

@@ -177,7 +177,9 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, 'Return', function () awful.util.spawn( term )       end ),
   awful.key({ modkey,           }, 'space', function () awful.layout.inc( layouts, 1 )  end ),
   awful.key({ modkey, 'Shift'   }, 'space', function () awful.layout.inc( layouts, -1 ) end ),
-
+  awful.key({ modkey,           }, 'F12', function () 
+                                            awful.util.spawn( beautiful.screenlock_cmd )
+                                                                                        end ), 
   -- Q -> '
   awful.key({ modkey, 'Control' }, '\'', awesome.quit                                       ),
 
