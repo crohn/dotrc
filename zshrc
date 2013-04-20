@@ -20,6 +20,9 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
+
 # some env 
 export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
 export EDITOR="vim"
