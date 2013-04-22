@@ -11,8 +11,10 @@
 # SET YOUR WINDOW TYPE
 # Your windowtype choices are: tty x11
 #
+OPTIONS=showscore,time
 OPTIONS=windowtype:tty
 OPTIONS=color
+OPTIONS=boulder:0
 #OPTIONS=name:player
 #OPTIONS=gender:male
 #OPTIONS=fruit:mango
