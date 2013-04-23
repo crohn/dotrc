@@ -20,12 +20,22 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
+
 # some env 
-export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
 export EDITOR="vim"
 
-export CPLUS_INCLUDE_PATH="$HOME/workenv/include"
-export C_INCLUDE_PATH="$HOME/workenv/include"
+export WORKENV_PREFIX="$HOME/workenv"
+
+export CPLUS_INCLUDE_PATH="$WORKENV_PREFIX/include"
+export C_INCLUDE_PATH="$CPLUS_INCLUDE_PATH"
+
+# export WORKENV_LDFLAGS="-L$WORKENV_PREFIX/lib64 -L$WORKENV_PREFIX/lib -L$WORKENV_PREFIX/lib32"
+
+export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin:$WORKENV_PREFIX/bin"
+
+export PYTHONPATH="$WORKENV_PREFIX/lib:$WORKENV_PREFIX/lib/python2.7/site-packages"
 
 # aliases
 alias ls='ls --color=always'
