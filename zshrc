@@ -33,3 +33,5 @@ alias ll='ls -l'
 
 alias grep='grep --color=always'
 
+# GIT ?
+export PS1="%d %# "
