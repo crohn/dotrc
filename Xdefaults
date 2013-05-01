@@ -26,14 +26,35 @@ URxvt*color6:     #2aa7e7
 URxvt*color7:     #f2f2f2
 URxvt*color8:     #1d202f
 URxvt*color9:     #ff361e
-URxvt*color10:    #ffc005
-URxvt*color11:    #93ff00
-URxvt*color12:    #0071ff
+URxvt*color10:    #93ff00
+URxvt*color11:    #ffc005
+URxvt*color12:    #0051cc
 URxvt*color13:    #ef0051
 URxvt*color14:    #4bb8fd
-URxvt*color15:    #a020f0
+URxvt*color15:    #e6dbec
 URxvt*fading:     30
 URxvt*shading:    30
 
-#URxvt*cursorBlink: true
-#URxvt*cursorUnderline: true
+# URxvt*cursorBlink: true
+# URxvt*cursorUnderline: true
+
+# NOTES
+# ---
+# color0       (black)            = Black
+# color1       (red)              = Red3
+# color2       (green)            = Green3
+# color3       (yellow)           = Yellow3
+# color4       (blue)             = Blue3
+# color5       (magenta)          = Magenta3
+# color6       (cyan)             = Cyan3
+# color7       (white)            = AntiqueWhite
+# color8       (bright black)     = Grey25
+# color9       (bright red)       = Red
+# color10      (bright green)     = Green
+# color11      (bright yellow)    = Yellow
+# color12      (bright blue)      = Blue
+# color13      (bright magenta)   = Magenta
+# color14      (bright cyan)      = Cyan
+# color15      (bright white)     = White
+# foreground                      = Black
+# background                      = White
