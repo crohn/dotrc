@@ -116,6 +116,21 @@ tag_labels = {
 tags = { }
 -- }
 
+-- { MAIL NOTIFICATIONS
+--
+mailbox       = widget( { type = 'textbox', align = 'right' } )
+mailbox.text  = ' ~ Mail 0 ~ '
+mailbox_timer = timer( { timeout = 15 } )
+mailbox_timer:add_signal(
+  'timeout',
+  function ()
+    local mfile  = io.popen( 'python -c "import mailbox\nprint len(mailbox.mbox(\'$HOME/Mail/inbox\'))"', 'r' )
+    mailbox.text = string.format( ' ~ Mayl %d ~ ', mfile:read('*a') ) --' ~ Mail ' .. mfile:read('*a') .. ' ~ '
+  end
+)
+mailbox_timer:start()
+-- }
+
 -- { WIBOX
 -- for each screen
 for s = 1, screen.count() do
@@ -153,6 +168,7 @@ for s = 1, screen.count() do
     {
       envy_promptbox[s],
       envy_launcher,
+      mailbox,
       envy_taglist[s],
       envy_layoutbox[s],
       envy_clock,
