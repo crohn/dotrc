@@ -125,7 +125,7 @@ mailbox_timer:add_signal(
   'timeout',
   function ()
     local mfile  = io.popen( 'python -c "import mailbox\nprint len(mailbox.mbox(\'$HOME/Mail/inbox\'))"', 'r' )
-    mailbox.text = string.format( ' ~ Mayl %d ~ ', mfile:read('*a') ) --' ~ Mail ' .. mfile:read('*a') .. ' ~ '
+    mailbox.text = string.format( ' ~ Mail %d ~ ', mfile:read('*a') ) --' ~ Mail ' .. mfile:read('*a') .. ' ~ '
   end
 )
 mailbox_timer:start()
