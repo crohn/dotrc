@@ -51,6 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin:$HOME/local/bin"
 export EDITOR='vim'
+export TERM='xterm-color'
 
 # VI mode
 bindkey -v
@@ -75,10 +76,16 @@ export PATH="$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin"
 
 alias start_qpid='qpidd --module-dir=/home/zeebrush/local/lib/qpid/daemon' # TODO -> put in supervisor
 
+# Functions
+
 supermon() {
   supervisorctl -s http://"$1":2013
 }
 
 goto() {
-  TERM=xterm-color ssh -i ~/.ssh/id_atono_rsa $1
+  ssh -i ~/.ssh/id_atono_rsa $1
+}
+
+kannelmon() {
+  watch -n 1 wget -q -O - $1:13000/status
 }

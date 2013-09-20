@@ -68,6 +68,7 @@ layouts = {
 -- { MENU
 --
 envy_awesome_menu = {
+  { 'firefox', 'firefox' },
   { 'restart', awesome.restart },
   { 'quit',    awesome.quit    },
 }
@@ -110,7 +111,7 @@ envy_tasklist.buttons = { }
 --
 tag_labels = {
   { 1, 2, 3, 4, 5, 6, 7, 'music', 'web' },
-  { 1, 2, 3, 4, 5, 6, 7, 8, 'skype' }
+  { 1, 2, 'xen', 4, 5, 6, 7, 8, 'skype' }
 }
 
 tags = { }
