@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin:$HOME/local/bin"
 export EDITOR='vim'
-export TERM='xterm-color'
+export TERM='linux'
 
 # VI mode
 bindkey -v
@@ -81,6 +81,16 @@ alias start_qpid='qpidd --module-dir=/home/zeebrush/local/lib/qpid/daemon' # TOD
 supermon() {
   supervisorctl -s http://"$1":2013
 }
+
+#function sctl() {
+#  HOST=$1
+# if [[ -z $1 ]]; then
+#   HOST="localhost"
+# else
+#   shift
+# fi
+# supervisorctl -c /etc/supervisor/supervisord.conf -s "http://$HOST:2013" $@
+#}
 
 goto() {
   ssh -i ~/.ssh/id_atono_rsa $1
