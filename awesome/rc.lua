@@ -18,9 +18,10 @@ local layouts = {
   awful.layout.suit.fair
 }
 local tags = { }
-tags[1] = awful.tag({ 1, 2, 3 }, s, layouts[1] )
+tags[1] = awful.tag({ 1, 2, 3, 4, 5 }, s, layouts[1] )
 
 _wibox = { }
+_wibox_bottom = { }
 _promptbox = { }
 _layoutbox = { }
 _tasklist = { }
@@ -32,14 +33,20 @@ for s = 1, screen.count() do
   _taglist[s] = awful.widget.taglist( s, awful.widget.taglist.filter.all, nil )
   _tasklist[s] = awful.widget.tasklist( s, awful.widget.tasklist.filter.currenttags, nil )
   _wibox[s] = awful.wibox({ position = 'top', screen = s })
+  _wibox_bottom[s] = awful.wibox({ position = 'bottom', screen = s })
+
+  -- TOP WIBOX
 
   local left_layout = wibox.layout.fixed.horizontal()
-  left_layout:add( _taglist[s] )
+--left_layout:add( _taglist[s] )
   left_layout:add( _promptbox[s] )
 
   local right_layout = wibox.layout.fixed.horizontal()
-  if s == 1 then right_layout:add( wibox.widget.systray() ) end
-  right_layout:add( _layoutbox[s] )
+  if s == 1 then 
+    right_layout:add( wibox.widget.systray() ) 
+    right_layout:add( awful.widget.textclock() ) 
+  end
+--right_layout:add( _layoutbox[s] )
 
   local layout = wibox.layout.align.horizontal()
   layout:set_left( left_layout )
@@ -47,6 +54,17 @@ for s = 1, screen.count() do
   layout:set_right( right_layout )
   
   _wibox[s]:set_widget( layout )
+
+  -- BOTTOM WIBOX
+  
+  local bottom_left_layout = wibox.layout.fixed.horizontal()
+  bottom_left_layout:add( _layoutbox[s] )
+
+  local bottom_layout = wibox.layout.align.horizontal()
+  bottom_layout:set_left( bottom_left_layout )
+  bottom_layout:set_middle( _taglist[s] )
+
+  _wibox_bottom[s]:set_widget( bottom_layout )
 end
 
 globalkeys = awful.util.table.join(
