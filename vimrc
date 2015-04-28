@@ -48,18 +48,29 @@ set mouse=a
 set shiftwidth=2
 set t_Co=256
 set tabstop=2
+set wildmenu
 
 set laststatus=2
 
-colorscheme kolor
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:NERDTreeDirArrows=1
+let g:tmuxline_preset='full'
+let g:solarized_termcolors=1
+let g:solarized_contrast='high'
+let g:solarized_visibility='high'
+let g:solarized_degrade=1
+let g:solarized_termcolors=256
+let g:solarized_italic=0
+let g:solarized_bold=0
 
-let mapleader = ','
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:NERDTreeDirArrows = 1
-let g:tmuxline_preset = 'full'
+colorscheme solarized
 
 nmap <C-n> :tabnext<CR>
 nmap <C-p> :tabprev<CR>
 nmap <C-y> :let @/=''<CR>
 nmap <F7>  :NERDTreeToggle<CR>
+
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
