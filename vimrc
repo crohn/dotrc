@@ -38,7 +38,10 @@ filetype plugin indent on    " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
+syntax enable
+
 set background=dark
+set cursorline
 set encoding=utf-8
 set expandtab
 set number
@@ -66,10 +69,10 @@ let g:solarized_bold=0
 
 colorscheme solarized
 
-nmap <C-n> :tabnext<CR>
-nmap <C-p> :tabprev<CR>
-nmap <C-y> :let @/=''<CR>
-nmap <F7>  :NERDTreeToggle<CR>
+nmap <F9>  :tabnext<CR>
+nmap <F10> :tabprev<CR>
+nmap <F11> :let @/=''<CR>
+nmap <F12> :NERDTreeToggle<CR>
 
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
