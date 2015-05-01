@@ -69,8 +69,6 @@ let g:solarized_bold=0
 
 colorscheme solarized
 
-nmap <F9>  :tabnext<CR>
-nmap <F10> :tabprev<CR>
 nmap <F11> :let @/=''<CR>
 nmap <F12> :NERDTreeToggle<CR>
 
