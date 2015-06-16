@@ -14,10 +14,13 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'bling/vim-airline'
 Plugin 'dag/vim-fish'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 Bundle 'edkolev/tmuxline.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 
@@ -71,7 +74,3 @@ colorscheme solarized
 
 nmap <F11> :let @/=''<CR>
 nmap <F12> :NERDTreeToggle<CR>
-
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
