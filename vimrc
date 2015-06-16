@@ -74,3 +74,6 @@ colorscheme solarized
 
 nmap <F11> :let @/=''<CR>
 nmap <F12> :NERDTreeToggle<CR>
+
+autocmd Syntax c,cpp,vim setlocal foldmethod=syntax
+autocmd Syntax c,cpp,vim normal zR
