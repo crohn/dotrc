@@ -1,0 +1,10 @@
+#!/bin/sh
+# black@evo - ~/.xinitrc
+
+xrandr --output HDMI1 --mode 1280x1024 --output HDMI2 --mode 1280x1024 --left-of HDMI1
+xrdb -load ~/.Xresources
+urxvtd -q -o -f
+
+/bin/zsh ~/src/library/zsh/randomscreen.sh
+
+exec i3
