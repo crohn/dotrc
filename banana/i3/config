@@ -1,0 +1,106 @@
+# black@evo - ~/.i3/config
+
+set $mod Mod4
+set $PICS /home/black/img
+
+font pango:DejaVu Sans Mono 8
+
+
+# Status Bar
+# ===
+bar {
+  strip_workspace_numbers yes
+  status_command          i3status
+}
+
+
+# Workspaces
+# ===
+
+workspace  1 output LVDS1
+workspace  2 output LVDS1
+workspace  3 output LVDS1
+workspace  4 output LVDS1
+workspace  5 output LVDS1
+workspace  6 output LVDS1
+workspace  7 output LVDS1
+workspace  8 output LVDS1
+workspace  9 output LVDS1
+workspace 10 output LVDS1
+
+
+# Applications
+# ===
+
+assign [class="chrome"] 10:www
+
+
+# Key Bindings
+# ===
+
+# R1
+# ---
+
+bindsym $mod+F4              kill
+bindsym $mod+backslash       exec --no-startup-id i3lock -t -i $PICS/lockpaper
+bindsym $mod+Ctrl+backslash  exit
+                             
+                             
+# R2                         
+# ---                        
+                             
+bindsym $mod+apostrophe      layout stacking
+bindsym $mod+comma           layout tabbed
+bindsym $mod+period          layout default
+                             
+bindsym $mod+f               fullscreen
+
+# bindsym $mod+r               mode "resize"
+bindsym $mod+Shift+r         reload
+bindsym $mod+Ctrl+r          restart
+                             
+                             
+# R3                         
+# ---                        
+                             
+bindsym $mod+a               exec /usr/bin/urxvtc
+bindsym $mod+o               exec dmenu_run
+                             
+bindsym $mod+h               focus left
+bindsym $mod+t               focus down
+bindsym $mod+n               focus up
+bindsym $mod+s               focus right
+                             
+bindsym $mod+Shift+h         move left
+bindsym $mod+Shift+t         move down
+bindsym $mod+Shift+n         move up
+bindsym $mod+Shift+s         move right
+                             
+bindsym $mod+Ctrl+t          split v
+bindsym $mod+Ctrl+s          split h
+                             
+                             
+# R4                         
+# ---                        
+                             
+bindsym $mod+semicolon       workspace 1
+bindsym $mod+q               workspace 2
+bindsym $mod+j               workspace 3
+bindsym $mod+k               workspace 4
+bindsym $mod+x               workspace 5
+bindsym $mod+b               workspace 6
+bindsym $mod+m               workspace 7
+bindsym $mod+w               workspace 8
+bindsym $mod+v               workspace 9
+bindsym $mod+z               workspace 10:www
+
+bindsym $mod+Shift+semicolon move container to workspace 1
+bindsym $mod+Shift+q         move container to workspace 2
+bindsym $mod+Shift+j         move container to workspace 3
+bindsym $mod+Shift+k         move container to workspace 4
+bindsym $mod+Shift+x         move container to workspace 5
+bindsym $mod+Shift+b         move container to workspace 6
+bindsym $mod+Shift+m         move container to workspace 7
+bindsym $mod+Shift+w         move container to workspace 8
+bindsym $mod+Shift+v         move container to workspace 9
+bindsym $mod+Shift+z         move container to workspace 10:www

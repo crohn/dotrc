@@ -1,0 +1,8 @@
+#!/bin/sh
+# black@banana - ~/.xinitrc
+
+xrdb -load ~/.Xresources
+urxvtd -q -o -f
+
+
+exec i3
